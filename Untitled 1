@@ -1,0 +1,40 @@
+separation of concerns - 관점의 분리    
+레이어 나누기 
+복잡도를 줄여 예측 가능하게 만들기.
+
+12/14 월 코드 시연
+
+버전 3.0 transformer
+
+폴리곤 2번째 점그릴때 나오게 하기
+
+폴리라인 사용 또는 점선사용 또는 첫번째점~두번째점 한번만 그리게 하기
+
+2차원 평면에서 복잡도를 줄이는 방법
+
+n2개를 찾아야 했는데, 직교하는 직선 두개를 두면 2n개가 됨. 축을 나눔으로서 복잡도가 log로 줄어듬
+
+shape이 anchor를 가지고 있어야함
+
+점을 찍으면, 밑에 shape이 있는지 없는지 판단하고, 없으면 drawing
+있으면, moving resizing, rotating 중에 선택해서 실행.
+
+          		관점 		 
+Event  type    source       Meaning
+State  		   Receiver		Action
+Guard		   Receiver	
+(condition)    
+(if 조건)
+
+이벤트 = 변화를 일으키는 원인, 변화를 일으키라는 사인
+=> 이벤트를 해석해서, 변화를 줌.
+
+
+이벤트  - 마우스의 행동을 받음 			
+-> 이벤트를 받을 대상을 지정 (대상의 상태에 따라 다르게 서렂ㅇ)
+
+
+mouse event의 타겟 panel 
+draw은 State idle, guard onShape(true)
+
+transformer의 타겟 -> shape 
